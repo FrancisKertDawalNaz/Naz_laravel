@@ -71,7 +71,7 @@
         </div>
     @else
         <div class="text-center py-5">
-            <h3>Your cart is empty</h3>
+            <h3>Your cart  empty</h3>
             <a href="{{ route('products.index') }}" class="btn btn-primary mt-3">
                 <i class="fas fa-shopping-bag"></i> Start Shopping
             </a>
