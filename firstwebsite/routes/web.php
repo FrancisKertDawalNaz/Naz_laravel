@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SampleMail;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -24,9 +25,13 @@ Route::get('/show-sample-email', function () {
     return view('pages.emails.sample', compact('details'));
 });
 
+Route::get('/show_form', function () {
+    return view('pages.show_form');
+});
+
+Route::post('/register-ajax', [UserController::class, 'registerAjax'])->name('register.ajax');
+
 // Admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);
 });
-
-
