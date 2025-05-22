@@ -29,7 +29,7 @@ Route::get('/show_form', function () {
     return view('pages.show_form');
 });
 
-Route::post('/register-ajax', [UserController::class, 'registerAjax'])->name('register.ajax');
+Route::post('/register-ajax', [UserController::class, 'registerAjax']);
 
 Route::get('/view_student', [UserController::class, 'view_student'])->name('view_student');
 

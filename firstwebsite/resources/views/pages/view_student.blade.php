@@ -7,7 +7,7 @@
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
-                    <th>ID</th>
+                    
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -17,7 +17,7 @@
             <tbody>
                 @forelse($students as $student)
                     <tr>
-                        <td>{{ $student->id }}</td>
+                 
                         <td>{{ $student->first_name }}</td>
                         <td>{{ $student->last_name }}</td>
                         <td>{{ $student->email }}</td>

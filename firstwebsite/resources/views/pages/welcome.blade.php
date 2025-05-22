@@ -25,8 +25,6 @@
                         </div>
                     </div>
                 </div>
-                <a href="/show-sample-email" class="btn btn-primary">send email</a>
-                <a href="/show_form" class="btn btn-primary">SHOW FORM</a>
                 <div class="col-md-4">
                     <div class="card feature-card h-100">
                         <div class="card-body text-center">
