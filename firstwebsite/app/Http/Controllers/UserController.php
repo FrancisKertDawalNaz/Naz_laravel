@@ -7,6 +7,14 @@ use App\Models\UserModel; // Assuming you have a UserModel for the students tabl
 
 class UserController extends Controller
 {
+    public function view_student()
+    {
+        // Fetch all users from the database
+        $students = UserModel::all();
+
+        // Return the view with the users data
+        return view('pages.view_student', compact('students'));
+    }
     public function registerAjax(Request $request)
     {
         // Validate the request data

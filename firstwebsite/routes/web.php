@@ -31,6 +31,8 @@ Route::get('/show_form', function () {
 
 Route::post('/register-ajax', [UserController::class, 'registerAjax'])->name('register.ajax');
 
+Route::get('/view_student', [UserController::class, 'view_student'])->name('view_student');
+
 // Admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);
