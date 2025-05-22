@@ -1,5 +1,6 @@
 @include('partials.header')
 @include('partials.nav')
+
 <div class="container py-5">
     <div class="card shadow mx-auto" style="max-width: 600px;">
         <div class="card-body">

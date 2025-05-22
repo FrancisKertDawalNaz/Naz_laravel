@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/send-sample-email">send email</a>
+                <a href="/show-sample-email" class="btn btn-primary">send email</a>
                 <div class="col-md-4">
                     <div class="card feature-card h-100">
                         <div class="card-body text-center">

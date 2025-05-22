@@ -15,13 +15,13 @@ Route::get('/about', function () {
     return view('pages.about');
 })->name('about');
 
-Route::get('/send-sample-email', function () {
+Route::get('/show-sample-email', function () {
     $details = [
         'subject' => 'Test Email',
         'body' => 'This is a test email.'
     ];
     Mail::to('nfranciskert@gmail.com')->send(new SampleMail($details));
-    return 'Email sent!';
+    return view('pages.emails.sample', compact('details'));
 });
 
 // Admin routes
