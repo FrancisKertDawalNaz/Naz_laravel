@@ -37,3 +37,7 @@ Route::get('/view_student', [UserController::class, 'view_student'])->name('view
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);
 });
+
+Route::get('/register', function () {
+    return view('pages.register');
+})->name('register');

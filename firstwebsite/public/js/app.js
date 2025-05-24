@@ -71,3 +71,29 @@ $(document).ready(function() {
         });
     });
 });
+
+// Registration form AJAX for register.blade.php
+$(document).ready(function() {
+    $('#registrationFormPage').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: window.registerAjaxUrl,
+            method: "POST",
+            data: $(this).serialize(),
+            success: function(response) {
+                let msg = response.message ? response.message : 'Registration successful!';
+                $('#messagePage').html('<div class="alert alert-success">'+msg+'</div>');
+                $('#registrationFormPage')[0].reset();
+            },
+            error: function(xhr) {
+                let errors = xhr.responseJSON.errors;
+                let errorHtml = '<div class="alert alert-danger"><ul>';
+                $.each(errors, function(key, value) {
+                    errorHtml += '<li>'+value[0]+'</li>';
+                });
+                errorHtml += '</ul></div>';
+                $('#messagePage').html(errorHtml);
+            }
+        });
+    });
+});
