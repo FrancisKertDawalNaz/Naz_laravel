@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SampleMail;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegisterController;
 
 
 Route::get('/', function () {
@@ -38,6 +39,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);
 });
 
-Route::get('/register', function () {
-    return view('pages.register');
-})->name('register');
+Route::get('/register', [RegisterController::class, 'showForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');

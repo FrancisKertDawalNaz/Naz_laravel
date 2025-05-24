@@ -7,7 +7,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4"><!-- changed col-lg-5 to col-lg-4 for same width as login -->
                     <div class="card shadow-lg border-0 rounded-4">
-                        <div class="card-body p-5">
+                        <div class="card-body p-4">
                             <div class="text-center mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#6366f1" class="bi bi-person-circle mb-3" viewBox="0 0 16 16">
                                     <path d="M11 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
@@ -15,6 +15,13 @@
                                 </svg>
                                 <h3 class="fw-bold mb-0" style="color:#6366f1;">Register</h3>
                             </div>
+                            @if(session('success'))
+                                <div class="alert alert-success text-center mb-3">{{ session('success') }}</div>
+                            @endif
+                            @if(session('error'))
+                                <div class="alert alert-danger text-center">{{ session('error') }}</div>
+                            @endif
+                            <div id="messagePage"></div>
                             <form id="registrationFormPage" method="POST">
                                 @csrf
                                 <div class="mb-3">
@@ -29,7 +36,6 @@
                                     <label for="password_confirmation" class="form-label" style="font-size: 0.95rem;">Confirm Password</label>
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-lg rounded-3" placeholder="Confirm your password" required style="font-size: 0.95rem;">
                                 </div>
-                                <div id="messagePage"></div>
                                 <button type="submit" class="btn btn-primary w-100 py-2 rounded-3" style="background: linear-gradient(90deg, #6366f1 0%, #a855f7 100%); border: none; font-size: 1rem;">Register</button>
                             </form>
                             <div class="mb-3 text-center">
