@@ -1,6 +1,4 @@
 @include('partials.header')
-@include('partials.nav')
-
 <main>
     <section class="hero-section d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);">
         <div class="container">
