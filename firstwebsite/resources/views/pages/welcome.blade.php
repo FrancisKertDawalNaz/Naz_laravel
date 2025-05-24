@@ -15,6 +15,9 @@
                                 </svg>
                                 <h3 class="fw-bold mb-0" style="color:#6366f1;">Sign In</h3>
                             </div>
+                            @if(session('error'))
+                                <div class="alert alert-danger text-center mb-3">{{ session('error') }}</div>
+                            @endif
                             <form method="POST" action="/login">
                                 @csrf
                                 <div class="mb-3">

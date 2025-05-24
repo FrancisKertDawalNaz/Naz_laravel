@@ -2,12 +2,12 @@
 @include('partials.nav')
 
 <main>
-    <section class="d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);">
+    <section class="hero-section d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4"><!-- changed col-lg-5 to col-lg-4 for same width as login -->
+                <div class="col-md-6 col-lg-4">
                     <div class="card shadow-lg border-0 rounded-4">
-                        <div class="card-body p-4">
+                        <div class="card-body p-5">
                             <div class="text-center mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#6366f1" class="bi bi-person-circle mb-3" viewBox="0 0 16 16">
                                     <path d="M11 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
@@ -19,7 +19,7 @@
                                 <div class="alert alert-success text-center mb-3">{{ session('success') }}</div>
                             @endif
                             @if(session('error'))
-                                <div class="alert alert-danger text-center">{{ session('error') }}</div>
+                                <div class="alert alert-danger text-center mb-3">{{ session('error') }}</div>
                             @endif
                             <div id="messagePage"></div>
                             <form id="registrationFormPage" method="POST">
@@ -29,12 +29,18 @@
                                     <input type="email" name="email" id="email" class="form-control form-control-lg rounded-3" placeholder="Enter your email" required style="font-size: 0.95rem;">
                                 </div>
                                 <div class="mb-3">
+                                    @error('password')
+                                        <div class="text-danger small mb-2">{{ $message }}</div>
+                                    @enderror
                                     <label for="password" class="form-label" style="font-size: 0.95rem;">Password</label>
                                     <input type="password" name="password" id="password" class="form-control form-control-lg rounded-3" placeholder="Enter your password" required style="font-size: 0.95rem;">
                                 </div>
                                 <div class="mb-3">
                                     <label for="password_confirmation" class="form-label" style="font-size: 0.95rem;">Confirm Password</label>
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-lg rounded-3" placeholder="Confirm your password" required style="font-size: 0.95rem;">
+                                    @error('password_confirmation')
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100 py-2 rounded-3" style="background: linear-gradient(90deg, #6366f1 0%, #a855f7 100%); border: none; font-size: 1rem;">Register</button>
                             </form>
@@ -49,4 +55,3 @@
     </section>
 </main>
 @include('partials.footer')
-<!-- Removed inline script. Make sure to include public/js/app.js in your layout or this view. -->
