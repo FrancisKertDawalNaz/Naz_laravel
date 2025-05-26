@@ -64,7 +64,7 @@ Route::post('/login', function(Request $request) {
 Route::post('/logout', function() {
     // Optionally clear session or use Auth::logout() if using Laravel Auth
     session()->flush();
-    return redirect('/');
+    return redirect('/'); // Redirect to welcome.blade.php
 });
 
 Route::get('/main', function() {
